@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<script>
+const url = 'https://api.prod.wetterdaten.hr.de/api/v1/vorhersagen/terminal_br_komplett/V_TERM_BR_AKTUELL';
+
+fetch(url)
+.then((resp) => resp.json())
+  .then(function(data) {
+console.log(data);
+    var mydata = JSON.parse(data);
+    console.log(mydata);
+  });
+
+
+
+</script>
+
+</html>
