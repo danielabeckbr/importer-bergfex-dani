@@ -1,0 +1,46 @@
+<body>
+    <div>Das Wetter</div>
+    <ul id="myList"></ul>
+    </body>
+    
+    <script>
+    const url = 'https://api.prod.wetterdaten.hr.de/api/v1/vorhersagen/terminal_br_komplett/V_TERM_BR_AKTUELL';
+    
+
+    
+    fetch(url)
+    .then((resp) => resp.json())
+      .then(function(data) {
+        let wetterArray = [];
+    
+    for(var item in data){
+        
+            for(var i in data[item]){
+        
+                wetterArray.push(data[item][i]);
+            }  
+        };
+    
+    wetterArray.sort(function(x, y) {
+    
+        var firstDate = new Date(x.valid_from),
+    
+        SecondDate = new Date(y.valid_from);
+    
+        if (firstDate < SecondDate) return 1;
+        if (firstDate > SecondDate) return -1;
+    
+        return 0;
+    
+    });
+    
+    console.log(wetterArray);
+    
+   
+     });
+    
+     
+
+    </script>
+    
+    </html>
