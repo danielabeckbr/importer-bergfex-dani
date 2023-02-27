@@ -1,9 +1,4 @@
 
-
-
-
-
-
 <!doctype html>
 <html>
    <h1>
@@ -34,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var menu = document.levelform.level;
         var level = menu.options[menu.selectedIndex].value;
          var number = {
-           value: "/setdebuglevel/" + level
+           value: level
          }
          var xhr = new window.XMLHttpRequest()
          xhr.open('POST', '/mylevel', true)
