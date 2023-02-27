@@ -15,8 +15,12 @@ app.get('*', function (req, res) {
 res.sendFile(path.join(__dirname, '/index.html'))
 })
 
-app.post('/level', function (req, res) {
-var level = req.body.value
-console.log(level)
+app.post('/:mylevel', function (req, res) {
+var mylevel = req.body.value
+console.log(mylevel)
 return res.end('done')
 })
+
+
+
+
