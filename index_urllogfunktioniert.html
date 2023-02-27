@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
            value: "/setdebuglevel/" + level
          }
          var xhr = new window.XMLHttpRequest()
-         xhr.open('POST', '/num', true)
+         xhr.open('POST', '/mylevel', true)
          xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8')
          xhr.send(JSON.stringify(number))
        }
