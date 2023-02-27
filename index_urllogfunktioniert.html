@@ -1,0 +1,49 @@
+
+
+
+
+
+
+<!doctype html>
+<html>
+   <h1>
+   XHR POST to Server
+   </h1>
+   <body>
+    <div>Das Wetter</div>
+    <ul id="myList"></ul>
+
+    <form name="levelform">
+        <label><b>Debug-Level:</b>
+        <select id="options1id" name="level" size="1">
+           <option value="error">Error</option>
+           <option value="warn">Warn</option>
+           <option value="info">Info</option>
+           <option value="debug">Debug</option>
+        </select>
+        </label>
+        </form>
+
+    </body>
+    
+     <script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.levelform.level.addEventListener('change', send);
+       
+       function send () {
+        var menu = document.levelform.level;
+        var level = menu.options[menu.selectedIndex].value;
+         var number = {
+           value: "/setdebuglevel/" + level
+         }
+         var xhr = new window.XMLHttpRequest()
+         xhr.open('POST', '/num', true)
+         xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8')
+         xhr.send(JSON.stringify(number))
+       }
+      });
+
+     </script>
+     
+   </body>
+</html>
